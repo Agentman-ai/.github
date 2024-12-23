@@ -25,6 +25,26 @@ APIs are integrated into agents through the Tools tab within Agent builder enabl
 - Parameterized API calls
 - Error handling and response processing
 
+## Creating New API Specifications
+
+To help create new API specifications in our standard format, you can use our [API Specification Generation Prompt](./LLM-prompt-to-generate-API-specs.md). This prompt helps convert natural language API descriptions into properly structured JSON specifications.
+
+Example usage:
+```
+Input: "I need an API that searches for products in a store. It should be a GET 
+request that takes a search query parameter and returns matching products. 
+It needs an API key for authentication."
+
+Output: A complete JSON specification with all required fields, proper structure, 
+and comprehensive documentation.
+```
+
+The prompt will guide you through:
+- Converting functional requirements to specification format
+- Documenting all parameters and responses
+- Defining error scenarios
+- Creating example requests and responses
+
 ## Available APIs
 
 ### [Shopify Admin API](./ShopifyAdminAPI.md)
