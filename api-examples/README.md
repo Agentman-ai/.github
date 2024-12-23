@@ -19,7 +19,7 @@ Each API specification includes:
 
 ### Agent Integration
 
-APIs are integrated into agents through the `publicTools` array in the agent definition, enabling:
+APIs are integrated into agents through the Tools tab within Agent builder enabling:
 - Direct API access within agent tasks
 - Structured tool usage in conversation flows
 - Parameterized API calls
