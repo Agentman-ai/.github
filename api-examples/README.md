@@ -27,7 +27,7 @@ APIs are integrated into agents through the Tools tab within Agent builder enabl
 
 ## Available APIs
 
-### [Shopify Admin API](./Shopify%20Admin%20API%20Documentation.md)
+### [Shopify Admin API](./ShopifyAdminAPI.md)
 Integration with Shopify's Admin API (2024-01 version) for accessing order and product information. Includes endpoints for order details retrieval and product searches.
 ```json
 {
@@ -41,7 +41,7 @@ Integration with Shopify's Admin API (2024-01 version) for accessing order and p
 }
 ```
 
-### [Cal.com Integration](./GetAvailableDatesTimesOnCal.com.md)
+### [Cal.com Integration](./GetAvailableDatesTimesOnCalCom.md)
 Integration with Cal.com's scheduling system for retrieving available time slots, providing programmatic access to calendar availability.
 ```json
 {
@@ -69,7 +69,7 @@ A serverless function for timezone-aware datetime operations.
 }
 ```
 
-### [Firebase Functions](./Firebase%20Functions%20Documentation.md)
+### [Firebase Functions](./FirebaseFunctionsAPI.md)
 User profile management operations using Firebase Cloud Functions.
 ```json
 {
