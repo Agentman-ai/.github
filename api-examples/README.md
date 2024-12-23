@@ -104,13 +104,13 @@ APIs are integrated into agents using the following structure:
 ```json
 [
   {
-  "name": "SubmitApplication",
-  "description": "Submits rental application",
-  "function_type": "HTTP",
-  "function_attributes": {
-    "method": "POST",
-    "url": "https://hooks.zapier.com/hooks/catch/{webhook-id}"
-  }
+    "name": "SubmitApplication",
+    "description": "Submits rental application",
+    "function_type": "HTTP",
+    "function_attributes": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/{webhook-id}"
+    }
     ...
   },
   {
@@ -120,12 +120,12 @@ APIs are integrated into agents using the following structure:
     "function_attributes": {
       "method": "GET",
       "url": "https://{region}-{project-id}.cloudfunctions.net/getUserProfile"
-    },
+    }
     ...
+  },
   {
     ...
   }
-
 ]
 ```
 
