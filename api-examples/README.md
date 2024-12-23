@@ -102,34 +102,31 @@ Automation for rental application submission and DocuSign integration.
 APIs are integrated into agents using the following structure:
 
 ```json
-{
-  "name": "Agent Name",
-  "agentPlan": {
-    "plan": {
-      "tools": {
-        "ToolName": "Tool Description"
-      },
-      "publicTools": [
-        {
-          "name": "ToolName",
-          "description": "Detailed description",
-          "function_type": "HTTP",
-          "function_attributes": { ... }
-        }
-      ],
-      "taskFlow": {
-        "tasks": [
-          {
-            "taskName": "TaskName",
-            "steps": [
-              "Call ${tool:ToolName} with parameters"
-            ]
-          }
-        ]
-      }
-    }
+[
+  {
+  "name": "SubmitApplication",
+  "description": "Submits rental application",
+  "function_type": "HTTP",
+  "function_attributes": {
+    "method": "POST",
+    "url": "https://hooks.zapier.com/hooks/catch/{webhook-id}"
   }
-}
+    ...
+  },
+  {
+    "name": "GetUserProfile",
+    "description": "Retrieves user profile",
+    "function_type": "HTTP",
+    "function_attributes": {
+      "method": "GET",
+      "url": "https://{region}-{project-id}.cloudfunctions.net/getUserProfile"
+    },
+    ...
+  {
+    ...
+  }
+
+]
 ```
 
 ## Common Features
