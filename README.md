@@ -13,12 +13,15 @@ This repository contains a collection of open source Chat Widgets, Tool specific
 ## Documentation
 
 - [API and Agent Integration Documentation](./api-examples/README.md) - Comprehensive documentation of available APIs and how they integrate with agents, including:
-  - [Shopify Admin API](./api-examples/Shopify%20Admin%20API%20Documentation.md) - Comprehensive Shopify Admin API integration for orders and products
+  - [Shopify Admin API](./api-examples/ShopifyAdminAPI.md) - Comprehensive Shopify Admin API integration for orders and products
   - [Cal.com Integration](./api-examples/GetAvailableDatesTimesOnCal.com.md) - Integration with Cal.com's scheduling system
   - [Google Cloud Functions](./api-examples/GetCurrentDatetime.md) - Example Google Cloud Function implementation
-  - [Firebase Functions](./api-examples/Firebase%20Functions%20API%20Documentation.md) - Firebase Cloud Functions for user profile management
+  - [Firebase Functions](./api-examples/FirebaseFunctionsAPI.md) - Firebase Cloud Functions for user profile management
   - [Zapier Webhooks](./api-examples/SubmitApplication.md) - Zapier webhook integration for rental applications
-  - [Agent Integration Patterns](./api-examples/integration-patterns.md) - Best practices for agent integrations
+  
+- [Integration Patterns](./api-examples/integration-patterns.md) - Common patterns and best practices for integrating APIs with agents
+
+
 
 ## Getting Started
 
