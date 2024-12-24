@@ -36,7 +36,7 @@ The API specification is structured in JSON format with several key sections:
 ### Endpoint
 
 ```
-POST https://hooks.zapier.com/hooks/catch/20933910/2sgpz72/
+POST https://hooks.zapier.com/hooks/catch/<hookid>
 ```
 
 ### Headers
@@ -159,7 +159,7 @@ This endpoint may be subject to rate limiting. Please contact support for specif
   "function_type": "HTTP",
   "function_attributes": {
     "method": "POST",
-    "url": "https://hooks.zapier.com/hooks/catch/20933910/2sgpz72/",
+    "url": "https://hooks.zapier.com/hooks/catch/<hookid>/",
     "headers": {
       "Content-Type": "application/json"
     },
