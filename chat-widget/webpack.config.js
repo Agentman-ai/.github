@@ -10,6 +10,10 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.svg$/,
+        type: 'asset/source'
+      }
     ],
   },
   resolve: {
@@ -18,9 +22,11 @@ module.exports = {
   output: {
     filename: 'chat-widget.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'ChatWidget',
-    libraryTarget: 'umd',
-    libraryExport: 'default',
+    library: {
+      name: 'ChatWidget',
+      type: 'umd',
+      export: 'ChatWidget'
+    },
     globalObject: 'this'
   },
 }; 

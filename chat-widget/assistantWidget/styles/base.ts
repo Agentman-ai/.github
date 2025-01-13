@@ -42,11 +42,12 @@ export const baseStyles = `
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 16px;
   }
 
   .chat-logo {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,6 +58,20 @@ export const baseStyles = `
     width: 100%;
     height: 100%;
   }
+
+  .chat-header-logo {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .chat-header-logo svg {
+    width: 100%;
+    height: 100%;
+  }  
 
   .chat-header h3 {
     margin: 0;
@@ -189,5 +204,11 @@ export const baseStyles = `
   /* Override any external styles that might affect the header text */
   .chat-header * {
     color: inherit !important;
+  }
+  
+  .chat-minimize {
+    border: none;
+    background: none;
+    cursor: pointer;
   }
 `;

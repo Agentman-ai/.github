@@ -48,7 +48,7 @@ export class OfflineParser {
     lineBreak: { pattern: /\n/g, replace: '<br>' }
   };
 
-  static parse(text) {
+  static parse(text: string): string {
     try {
       let html = text;
 
@@ -69,7 +69,7 @@ export class OfflineParser {
       // Bullet lists
       listMatches = html.match(new RegExp(this.rules.bulletList.pattern.source, 'gm'));
       if (listMatches) {
-        const bulletItems = listMatches.map(item => 
+        const bulletItems = listMatches.map((item: string) => 
           item.replace(this.rules.bulletList.pattern, this.rules.bulletList.replace)
         ).join('');
         html = html.replace(
@@ -81,7 +81,7 @@ export class OfflineParser {
       // Numbered lists
       listMatches = html.match(new RegExp(this.rules.numberList.pattern.source, 'gm'));
       if (listMatches) {
-        const numberItems = listMatches.map(item => 
+        const numberItems = listMatches.map((item: string) => 
           item.replace(this.rules.numberList.pattern, this.rules.numberList.replace)
         ).join('');
         html = html.replace(
@@ -115,7 +115,7 @@ export class OfflineParser {
   }
 
   // Helper method to sanitize URLs
-  static sanitizeUrl(url) {
+  static sanitizeUrl(url: string): string {
     try {
       const parsed = new URL(url);
       return ['http:', 'https:'].includes(parsed.protocol) ? url : '#';

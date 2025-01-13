@@ -25,7 +25,7 @@ export const variantStyles = {
         background: var(--chat-header-background-color, #059669);
         cursor: pointer;
         z-index: var(--chat-z-index, 1000);
-        border-radius: 24px;
+        border-radius: 32px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         transition: transform 0.2s;
       }
@@ -37,8 +37,8 @@ export const variantStyles = {
       .chat-widget--corner .chat-toggle-content {
         display: flex;
         align-items: center;
-        gap: 8px;
-        padding: 12px 20px;
+        gap: 4px;
+        padding: 8px 12px;
       }
 
       .chat-widget--corner .chat-toggle img {
@@ -49,7 +49,7 @@ export const variantStyles = {
 
       .chat-widget--corner .chat-toggle-text {
         color: white;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
       }
 

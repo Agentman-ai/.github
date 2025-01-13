@@ -44,7 +44,7 @@ export const ChatComponent: React.FC<ChatComponentProps> = ({
   headerTextColor,
   agentIconColor,
   userIconColor,
-  toggleText = 'Chat with us',
+  toggleText = 'Ask Agentman',
   initialMessage
 }) => {
   const chatWidgetRef = useRef<ChatWidget | null>(null);

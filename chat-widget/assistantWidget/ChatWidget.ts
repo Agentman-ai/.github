@@ -196,7 +196,7 @@ export class ChatWidget {
     return false;
   }
 
-  cacheLibrary(cdn) {
+  cacheLibrary(cdn: string): void {
     try {
       if ('caches' in window) {
         caches.open('chat-widget-cache').then(cache => {
@@ -515,8 +515,12 @@ export class ChatWidget {
       ${showToggle ? `
         <button class="chat-toggle">
           <div class="chat-toggle-content">
-            <img src="${this.assets.logo}" alt="Chat" width="24" height="24">
-            <span class="chat-toggle-text">${this.config.toggleText || 'Chat with us'}</span>
+            <div class="chat-logo">
+                ${this.assets.logo.startsWith('/')
+                  ? `<img src="${this.assets.logo}" alt="logo" width="42" height="42"/>`
+                  : this.assets.logo}
+              </div>          
+            <span class="chat-toggle-text">${this.config.toggleText || 'Ask Agentman'}</span>
           </div>
         </button>
       ` : ''}
@@ -526,8 +530,8 @@ export class ChatWidget {
             <div class="chat-logo-title">
               <div class="chat-logo">
                 ${this.assets.headerLogo.startsWith('/')
-        ? `<img src="${this.assets.headerLogo}" alt="logo" width="32" height="32"/>`
-        : this.assets.headerLogo}
+                  ? `<img src="${this.assets.headerLogo}" alt="logo" width="32" height="32"/>`
+                  : this.assets.headerLogo}
               </div>
               <h3>${this.config.title}</h3>
             </div>
