@@ -1,16 +1,24 @@
-# Agentman Chat Widget
+# Agentman Chat Widget Documentation
 
 A customizable chat widget that can be easily integrated into any web application. The widget provides a modern, responsive interface for users to interact with Agentman AI.
 
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [JavaScript](#javascript)
+  - [HTML](#html)
+- [Configuration](#configuration)
+- [Theme Customization](#theme-customization)
+- [License](#license)
+
 ## Features
 
-- 🎨 Fully customizable theme and styling
-- 📱 Responsive design that works on all devices
-- 💬 Support for real-time chat interactions
-- 🔧 Multiple layout variants (corner, embedded)
-- 🎯 Customizable positioning
-- 🖼️ SVG logo support
-- 📐 Resizable chat window
+- 🎨 Fully customizable UI
+- 🔒 Secure token-based authentication
+- 🌐 Easy integration with any web application
+- 📱 Responsive design for all devices
+- ⚡ Lightweight and performant
 
 ## Installation
 
@@ -18,172 +26,72 @@ A customizable chat widget that can be easily integrated into any web applicatio
 npm install @agentman/chat-widget
 ```
 
-## Quick Start
+## Usage
 
-### ESM/CommonJS Usage
+### JavaScript
+
 ```javascript
 import { ChatWidget } from '@agentman/chat-widget';
 
 const config = {
-    apiUrl: 'https://studio-api.chainofagents.ai',
-    agentToken: 'YOUR_AGENT_TOKEN',
-    variant: 'corner',
-    containerId: 'chat-container',
-    title: 'Agentman Assistant',
-    position: 'bottom-right',
-    initialMessage: 'Hello!'
+  agentToken: 'YOUR_AGENT_TOKEN',
+  apiUrl: 'https://your-api.com',
+  containerId: 'chat-widget-container',
+  variant: 'corner', // or 'centered'
+  position: 'bottom-right', // or 'bottom-left', 'top-right', 'top-left'
+  title: 'Agentman Assistant',
+  initiallyOpen: false,
+  initialMessage: 'Hello! How can I help you today?',
+  theme: {
+    headerBackgroundColor: '#059669',
+    headerTextColor: '#ffffff'
+  }
 };
 
 const chatWidget = new ChatWidget(config);
+
+// Cleanup when needed
+chatWidget.destroy();
 ```
 
-### UMD Usage
+### HTML
+
 ```html
-<script src="https://unpkg.com/@agentman/chat-widget@^0.10.0/dist/umd/chat-widget.js"></script>
-<script>
-    window.addEventListener('load', () => {
-        const { ChatWidget } = window['@agentman/chat-widget'];
-        
-        const config = {
-            apiUrl: 'https://studio-api.chainofagents.ai',
-            agentToken: 'YOUR_AGENT_TOKEN',
-            // ... other options
-        };
-
-        const chatWidget = new ChatWidget(config);
-    });
-</script>
+<div id="chat-widget-container"></div>
 ```
 
-## Configuration Options
+## Configuration
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `apiUrl` | `string` | Required | Agentman API endpoint URL |
-| `agentToken` | `string` | Required | Your Agentman API token |
-| `variant` | `'corner' \| 'embedded'` | `'corner'` | Widget layout variant |
-| `containerId` | `string` | Required | ID of the container element |
-| `title` | `string` | `'Agentman Assistant'` | Chat window title |
-| `position` | `'bottom-right' \| 'bottom-left'` | `'bottom-right'` | Widget position (corner variant only) |
-| `initiallyOpen` | `boolean` | `false` | Whether chat should be open on load |
-| `initialMessage` | `string` | `'Hello!'` | Initial message to display |
-| `initialHeight` | `string` | `'600px'` | Initial chat window height |
-| `initialWidth` | `string` | `'400px'` | Initial chat window width |
-| `toggleText` | `string` | `'Ask Agentman'` | Text shown on the toggle button |
+| Option | Type | Description |
+|--------|------|-------------|
+| `agentToken` | `string` | Your Agentman API token |
+| `apiUrl` | `string` | The API endpoint URL |
+| `containerId` | `string` | ID of the container element |
+| `variant` | `'corner' \| 'centered'` | Widget placement style |
+| `position` | `'bottom-right' \| 'bottom-left' \| 'top-right' \| 'top-left'` | Widget position |
+| `title` | `string` | Chat widget title |
+| `initiallyOpen` | `boolean` | Whether to open chat on load |
+| `initialMessage` | `string` | Initial bot message |
+| `theme` | `object` | UI theme customization |
 
-## Theming
+## Theme Customization
 
-The widget supports comprehensive theming options:
-
-```javascript
-const config = {
-    // ... other options
-    theme: {
-        headerBackgroundColor: '#059669',
-        headerTextColor: '#ffffff',
-        agentIconColor: '#059669',
-        userIconColor: '#059669',
-        backgroundColor: '#ffffff',
-        textColor: '#1f2937',
-        buttonColor: '#10b981',
-        buttonTextColor: '#ffffff',
-        agentBackgroundColor: '#f3f4f6',
-        userBackgroundColor: '#10b981',
-        agentForegroundColor: '#000000'
-    }
-};
-```
-
-### Theme Options
-
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `headerBackgroundColor` | `string` | `'#059669'` | Header background color |
-| `headerTextColor` | `string` | `'#ffffff'` | Header text color |
-| `backgroundColor` | `string` | `'#ffffff'` | Main chat window background color |
-| `textColor` | `string` | `'#1f2937'` | Main text color |
-| `buttonColor` | `string` | `'#10b981'` | Action button background color |
-| `buttonTextColor` | `string` | `'#ffffff'` | Action button text color |
-| `agentBackgroundColor` | `string` | `'#f3f4f6'` | Agent message bubble background |
-| `userBackgroundColor` | `string` | `'#10b981'` | User message bubble background |
-| `agentForegroundColor` | `string` | `'#000000'` | Agent message text color |
-| `agentIconColor` | `string` | `'#059669'` | Agent message icon color |
-| `userIconColor` | `string` | `'#059669'` | User message icon color |
-
-## React Component
-
-For React applications, you can use the provided React component:
-
-```jsx
-import { ChatComponent } from '@agentman/chat-widget/react';
-
-function App() {
-    return (
-        <ChatComponent
-            apiUrl="https://studio-api.chainofagents.ai"
-            agentToken="YOUR_AGENT_TOKEN"
-            variant="corner"
-            title="Agentman Assistant"
-            position="bottom-right"
-            initialMessage="Hello!"
-            theme={{
-                headerBackgroundColor: '#059669',
-                headerTextColor: '#ffffff',
-                agentIconColor: '#059669',
-                userIconColor: '#059669',
-                backgroundColor: '#ffffff',
-                textColor: '#1f2937',
-                buttonColor: '#10b981',
-                buttonTextColor: '#ffffff',
-                agentBackgroundColor: '#f3f4f6',
-                userBackgroundColor: '#10b981',
-                agentForegroundColor: '#000000'
-            }}
-        />
-    );
+```typescript
+interface ChatTheme {
+  headerBackgroundColor: string;
+  headerTextColor: string;
+  backgroundColor: string;
+  textColor: string;
+  buttonColor: string;
+  buttonTextColor: string;
+  agentBackgroundColor: string;
+  userBackgroundColor: string;
+  agentForegroundColor: string;
+  userForegroundColor: string;
+  agentIconColor: string;
+  userIconColor: string;
 }
 ```
-
-## Examples
-
-### Basic Corner Widget
-```html
-<div id="chat-container"></div>
-<script>
-    const chatWidget = new ChatWidget({
-        apiUrl: 'https://studio-api.chainofagents.ai',
-        agentToken: 'YOUR_AGENT_TOKEN',
-        variant: 'corner',
-        containerId: 'chat-container',
-        title: 'Agentman Assistant',
-        position: 'bottom-right',
-        initialMessage: 'Hello!'
-    });
-</script>
-```
-
-### Embedded Widget
-```html
-<div id="chat-container" style="height: 600px; width: 400px;"></div>
-<script>
-    const chatWidget = new ChatWidget({
-        apiUrl: 'https://studio-api.chainofagents.ai',
-        agentToken: 'YOUR_AGENT_TOKEN',
-        variant: 'inline',
-        containerId: 'chat-container',
-        title: 'Agentman Assistant',
-        initialMessage: 'Hello!'
-    });
-</script>
-```
-
-## Browser Support
-
-The chat widget supports all modern browsers:
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
 
 ## License
 
