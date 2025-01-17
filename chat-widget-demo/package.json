@@ -8,7 +8,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "@agentman/chat-widget": "^0.12.1"
+    "@agentman/chat-widget": "^0.13.0"
   },
   "devDependencies": {
     "ansi-html-community": "^0.0.8",
