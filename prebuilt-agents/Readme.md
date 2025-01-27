@@ -1,6 +1,6 @@
 # RentalSign Agent
 
-A conversational AI agent that transforms rental applications into natural dialogue and automatically generates DocuSign documents. Built with Agentman for the DocuSign Hackathon: Unlocked.
+A conversational AI agent that transforms rental applications into natural dialogue and automatically generates DocuSign documents. 
 
 ## Quick Setup
 
